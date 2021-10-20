@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
 
-function Alert({deleteAlert, massage, type}) {
+function Alert({deleteAlert, list, massage, type}) {
 
     useEffect(()=>{
         const settime = setTimeout(() => {
             deleteAlert()
-        }, 3000);
+        }, 2000);
         return ()=> clearTimeout(settime)
-    })
+    },[list])
 
 
     return (
