@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Alert from "./components/Alert";
 import List from "./components/List";
 
-
+//local storage
 const getLocalStorage = () => {
   let list = localStorage.getItem("list")
   if(list){
@@ -23,9 +23,9 @@ function App() {
   const [isEdit, setEdit] = useState(false)
   const [editID, setEditID] = useState(null)
 
-
   //input change
   const handleChange = (e) => {
+    const target = e.target
     setName(e.target.value);
   };
 
@@ -47,8 +47,9 @@ function App() {
         setName('')
         setEditID(null)
         setEdit(false)
+        if()
         showAlert(true, "Item edited", 'info')
-      }else{
+        }else{
         showAlert(true, 'Item added to list', 'success')
         const newItem = {
           id: Math.random(),
@@ -59,6 +60,7 @@ function App() {
       }
   };
 
+  //show alert
   const showAlert = (show=false, massage='', type='') => {
     setAlert({show,massage, type})
   }

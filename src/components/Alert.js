@@ -6,9 +6,8 @@ function Alert({deleteAlert, list, massage, type}) {
         const settime = setTimeout(() => {
             deleteAlert()
         }, 2000);
-        return ()=> clearTimeout(settime)
+        return ()=> clearInterval(settime)
     },[list])
-
 
     return (
         <div>
